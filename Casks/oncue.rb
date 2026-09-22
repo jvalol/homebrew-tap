@@ -1,6 +1,6 @@
 cask "oncue" do
-  version "4.7.1"
-  sha256 "4e6b9d82bad618b9761d096f4a027f84d8460ef18a9dc69d7e34fede81bb82a1"
+  version "4.8"
+  sha256 "37c2762afc0165c4f902119f5a32029be0deaca78d7d1becb2754b80a78b859d"
 
   url "https://oncue-web.netlify.app/downloads/OnCue-#{version}.zip"
   name "OnCue"
@@ -31,4 +31,14 @@ cask "oncue" do
     "~/Library/Containers/com.eggdevil.oncue",
     "~/Library/Containers/lol.jva.oncue",
   ]
+
+  # brew prints this on install and upgrade, in the terminal the person is already looking at.
+  # It is the only channel that reaches a brew user at the moment of the 4.8 update, which changed
+  # the bundle ID and so left the old login item registered and dead (oncue spec 0037).
+  caveats <<~EOS
+    Updating from 4.7.1 or earlier: OnCue will not open at login until you
+    remove the old OnCue row in System Settings > General > Login Items and
+    turn Open OnCue at Login back on in OnCue's Preferences. Other settings
+    are back at their defaults; recordings are untouched.
+  EOS
 end
