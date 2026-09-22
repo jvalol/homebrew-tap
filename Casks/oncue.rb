@@ -16,11 +16,19 @@ cask "oncue" do
 
   app "OnCue.app"
 
-  uninstall quit: "lol.jva.oncue"
+  # Both bundle IDs on purpose. The app shipped as lol.jva.oncue through 4.7.1 and moves to
+  # com.eggdevil.oncue after it, so an upgrade leaves a container under each. Naming only the
+  # current one would quit nothing on an older copy and leave the old container behind forever.
+  uninstall quit: [
+    "com.eggdevil.oncue",
+    "lol.jva.oncue",
+  ]
 
   # Recordings in ~/Movies/OnCue (or wherever the user pointed it) are theirs and are left alone.
   zap trash: [
+    "~/Library/Application Scripts/com.eggdevil.oncue",
     "~/Library/Application Scripts/lol.jva.oncue",
+    "~/Library/Containers/com.eggdevil.oncue",
     "~/Library/Containers/lol.jva.oncue",
   ]
 end
