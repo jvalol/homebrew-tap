@@ -1,6 +1,6 @@
 cask "oncue" do
-  version "4.7"
-  sha256 "a1554b4c62ac06b7d6ac856c3c4c68d5f11bbb7a906da251d631971c3a6a321d"
+  version "4.7.1"
+  sha256 "4e6b9d82bad618b9761d096f4a027f84d8460ef18a9dc69d7e34fede81bb82a1"
 
   url "https://oncue-web.netlify.app/downloads/OnCue-#{version}.zip"
   name "OnCue"
