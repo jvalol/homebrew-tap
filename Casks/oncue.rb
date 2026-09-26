@@ -1,6 +1,6 @@
 cask "oncue" do
-  version "4.15"
-  sha256 "b53db1ae03afe8942ffbe07538deb242e9fec31c9b89dbc1bc40d30cfe755b9c"
+  version "4.16"
+  sha256 "21cd33fc9725c23ccdba677dad5056fc982569e469829f56b29d7aae6c794fbf"
 
   url "https://oncue.jva.lol/downloads/OnCue-#{version}.zip"
   name "OnCue"
